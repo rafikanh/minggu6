@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">{{ __('USER DATA') }}</div>
 
@@ -21,6 +21,7 @@
                                 <th>Username</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,6 +31,7 @@
                                 <td>{{ $u->username }}</td>
                                 <td>{{ $u->name }}</td>
                                 <td>{{ $u->email }}</td>
+                                <td>{{ $u->role }}</td>
                                 <td><form action="/users/{{$u->id}}" method="post">
                                     <a href="/users/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
                                     @csrf

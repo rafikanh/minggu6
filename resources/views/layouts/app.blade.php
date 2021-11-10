@@ -52,9 +52,13 @@
                                 </li>
                             @endif
                         @else
-                            <a href="http://127.0.0.1:8000/home" class="btn">Home</a>
-                            <a href="http://127.0.0.1:8000/students" class="btn">CRUD</a>
-                            <a href="http://127.0.0.1:8000/users" class="btn">USER</a>
+                            <a href="/home" class="btn">Home</a>
+                            <a href="/students" class="btn">CRUD</a>
+                            <li class="nav-item">
+                                @can('manage-users')
+                                <a class="nav-link" href="/users">User Data</a>
+                                @endcan
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
